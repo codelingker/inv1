@@ -1,0 +1,438 @@
+body {
+    background-color: #eef7ff;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    background-color: #008cff;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
+}
+header a:hover {
+    text-decoration: none;
+}
+.header-inline {
+    width: 100%;
+    position: relative;
+}
+.header-left {
+    float: left;
+    color: #fff;
+}
+.header-right {
+    float: right;
+}
+.header-left, .header-right {
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.webTitle {
+    width: 280px;
+    padding: 0 30px;
+    background-color: rgba(0,0,0,0.1);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.webTitle a {
+    color: #fff;
+}
+.webTitle h1 {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+.webTitle span {
+    color: #fff2aa;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+.left-menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 150ms ease;
+    margin-left: 30px;
+}
+.left-menu-icon:active {
+    transform: scale(1.2);
+}
+.navicon-menu {
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    padding: 0 30px 0 20px;
+    margin-right: 50px;
+}
+.navicon-menu .icon {
+    position: relative;
+}
+.navicon-menu .icon:before {
+    position: absolute;
+    right: -18px;
+    top: 15px;
+    content: "";
+    border-top: 5px solid rgba(255, 255, 255, 0.7);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.navicon-menu .icon img {
+    width: 20px;
+}
+.navicon-menu.user {
+    margin-left: 15px;
+    background-color: rgba(0,0,0,0.1);
+}
+.navicon-menu.user .icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.submenu {
+    position: absolute;
+    right: -15px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 3px;
+    top: 61px;
+    width: 280px;
+    cursor: default;
+    display: none;
+}
+.submenu:before {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: -8px;
+    border-bottom: 8px solid #fff;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+.navicon-menu:hover .submenu {
+    display: block;
+    animation: navicoFade 300ms ease;
+}
+@keyframes navicoFade {
+    from {
+        top: 60px
+    }
+    to {
+        top: 70px;
+    }
+}
+
+.navicon-menu.user .profil {
+    text-align: center;
+    padding: 15px;
+}
+.navicon-menu.user .profil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.navicon-menu.user .profil .text {
+    margin-top: 15px;
+    position: relative;
+}
+.navicon-menu.user .profil .text h5 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+}
+.navicon-menu.user .profil .text p {
+    font-size: 13px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,0.7);
+}
+.show-navmenu .navmenu {
+   visibility: visible;
+   left: 0;
+   opacity: 1;
+   transition: 250ms ease;
+}
+
+.navmenu {
+    position: fixed;
+    top: 60px;
+    left: -300px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-left: 0;
+    border-top: 0;
+    visibility: hidden;
+    z-index: 9;
+    opacity: 0;
+}
+/* .navmenu .active {
+    border-left: 4px solid #ff5e00;
+}
+.navmenu .active:hover {
+    border-color: #ff0060;
+} */
+.navmenu h5 {
+    font-size: 18px;
+    color: rgba(0,0,0,0.7);
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    border-bottom: 1px dashed #ddd;
+    position: relative;
+}
+.navmenu ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.navmenu ul li {
+    display: block;
+    position: relative;
+    border-bottom: 1px dashed #ddd;
+}
+.navmenu ul li a {
+    color: #444;
+    padding: 10px 30px;
+    display: block;
+    font-size: 14px;
+    transition: all 200ms;
+}
+.navmenu ul li a:hover {
+    text-decoration: none;
+    border-left: 6px solid orangered;
+}
+.navmenu ul ul {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+    border-top: 1px dashed #ddd;
+}
+.navmenu ul ul li:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    border-left: 5px solid #444;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.navmenu ul ul li {
+    border-bottom: 0;
+}
+.navmenu ul ul li a {
+    padding-left: 60px;
+}
+/* .navmenu ul ul li a.active {
+    color: #999!important;
+    border: 0;
+} */
+.navmenu ul ul li a:hover {
+    border: 0;
+    color: rgba(0,0,0,0.5);
+}
+
+#menu-left > li > a.sembunyi:after {
+    position: absolute;
+    right: 20px;
+    top:10px;      
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 300ms;
+}
+#menu-left > li > a.sembunyi.tampil:after {
+    content: "\f107";    
+}
+
+.d-block-mob {
+    display: none;
+}
+
+.navinfo {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    float: right;
+    color: #444;
+    line-height: 40px;
+    padding: 0 50px;
+    box-shadow: rgba(0,0,0,0.3) 0 0 10px 0;
+    transition: 200ms ease;
+    z-index: 5;
+}
+.navinfo ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+.navinfo ul li {
+    margin-right: 30px;
+    position: relative;
+}
+.navinfo ul li a {
+    color: #444;
+    transition: 200ms ease;
+}
+.navinfo a:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+.navinfo ul li a:active {
+    transform: scale(1.1);
+}
+.navinfo .c {
+    position: absolute;
+    top: 8px;
+    right: -5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ff0060;
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+.navinfo-right h6{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    float: right;
+    position: relative;
+    padding: 30px 50px;
+    margin-top: 120px;
+    transition: 200ms ease;
+}
+
+.pageTitle {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+a.card {
+    color: #000;
+}
+a.card:hover {
+    text-decoration: none;
+}
+
+.card-icon-d1 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 2.4rem;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    z-index: -1;
+}
+.card-icon-d2 {
+    font-size: 6rem;
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100px;
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+.card {
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 18px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+}
+.table-card {
+    font-size: 15px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.table-card th {
+    font-weight: 500;
+}
+.table-card th, .table-card td {
+    padding: 10px 7px;
+    vertical-align: baseline;
+}
+.table-card tr {
+    border-bottom: 1px dashed #ddd;
+}
+.table-card tr:last-child {
+    border-bottom: 0;
+}
+
+.card-sch-mini {
+    border-radius: 100%;
+    position: relative;
+}
+.card-sch-mini img {
+    width: 80px;
+    height: auto;
+}
+.card-sch-text h5 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.card-sch-text p {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.cs-card ul li {
+    border: 0;
+    border-bottom: 1px dashed #ddd;
+}
+.cs-card ul li:first-child {
+    border-top: 1px dashed #ddd;
+}
+.cs-card ul li:last-child {
+    border-bottom: 0;
+}
+.list-group img {
+    width: 60px;
+    height: 60px;
+}
+.list-group .datetime {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.alert-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    opacity: 0.3;
+}

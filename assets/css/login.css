@@ -1,0 +1,229 @@
+body {
+    background-color: #1824c7;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrap {
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    border-radius: 3px;
+    z-index: 1;
+}
+.login-header {
+    position: relative;
+    color: rgba(0,0,0,0.8);
+    letter-spacing: 1px;
+    padding: 20px;
+    text-align: center;
+}
+.login-header h2 {
+    letter-spacing: 2px;
+    color: #1824c7;
+    font-weight: normal;
+    font-size: 24px;
+}
+.login-content {
+    padding: 10px 20px;
+}
+.field {
+    width: 100%;
+    border: 0;
+    border-bottom: 3px solid #ddd;
+    outline: none;
+    height: 38px;
+    transition: 250ms ease;
+    background-color: transparent;
+}
+.field.pass {
+    padding-right: 35px;
+}
+.field-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+.field-group:last-child {
+    margin-bottom: 0;
+}
+.field-group .label {
+    position: absolute;
+    top: 0;
+    left: 3px;
+    pointer-events: none;
+    transition: 250ms ease;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+}
+.field:focus, .field:not(:placeholder-shown) {
+    border-color: #ff0060;
+}
+.field:focus ~ .label, .field:not(:placeholder-shown) ~ .label {
+    top: -20px;
+    font-size: 12px;
+    color: #ff0060;
+    letter-spacing: 1px;
+}
+.textarea .field {
+    resize: none;
+    height: 60px;
+}
+.forgot {
+    position: relative;
+    top: -26px;
+}
+
+.login-btn {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid #aaa;
+    outline: none;
+    color: #777;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    z-index: 1;
+    transition: 100ms ease;
+}
+.login-btn:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    content: "";
+    background-color: #ff0060;
+    z-index: -1;
+    transition: 200ms ease;
+    opacity: 0;
+}
+.login-btn:hover {
+    color: #fff;
+    border-color: #ff0060;
+}
+.login-btn:hover::before {
+    height: 100%;
+    opacity: 1;
+}
+.login-btn:focus {
+    outline: none;
+}
+.login-btn:active {
+    opacity: 0.7;
+}
+
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 98;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: aniPop 250ms ease;
+}
+
+.show-popup .popup {
+    display: flex;
+}
+
+@keyframes aniPop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-content {
+    width: 320px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    animation: aniPopC 400ms ease;
+}
+
+.close-popup .popup-content {
+    animation: aniPopCO 400ms ease;
+}
+
+@keyframes aniPopC {
+    from {
+        top: -15px;
+    }
+    to {
+        top: 15px;
+    }
+}
+@keyframes aniPopCO {
+    from {
+        top: 0px;
+        opacity: 1;
+    }
+    to {
+        top: -15px;
+        opacity: 0;
+    }
+}
+
+.popup .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    background-color: #ff0060;
+    opacity: 1;
+    border-bottom-left-radius: 40px;
+    color: #fff;
+    padding: 10px 15px 10px 20px;
+    border-top-right-radius: 4px;
+    border: 0;
+    outline: none;
+}
+.popup-content h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.login-icon {
+    position: absolute;
+    right: 40px;
+    bottom: 10%;
+    z-index: -1;
+    font-size: 10rem;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+
+}
+
+#showhide_pass {
+    display: none;
+}
+#showhide_pass_lab {
+    position: absolute;
+    right: 3px;
+    top: 7px;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 680px) {
+    .login-wrap {
+        width: 90%;
+        height: 95vh;
+    }
+}

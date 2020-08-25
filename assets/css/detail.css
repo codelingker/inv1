@@ -1,0 +1,234 @@
+main {
+    padding: 50px 0 20px;
+}
+.produk-page {
+    position: relative;
+    width: 60%;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+}
+.produk-img-wrap {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.produk-img-mini {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.produk-img-mini img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+    filter: grayscale(50%);
+    opacity: 0.6;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.produk-img-mini img:hover, .produk-img-mini .active {
+    opacity: 1;
+    filter: grayscale(0);
+}
+.produk-img-mini .active:hover {
+    filter: grayscale(50%);
+    opacity: 0.6;
+}
+.produk-img-view {
+    border: 1px solid #ccc;
+    width: calc(100% - 100px);
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.produk-img-view img {
+    width: 100%;
+    height: auto;
+}
+
+.produk-text-wrap {
+    position: relative;
+    width: calc(100% - 300px);
+    padding-left: 10px;
+}
+.produk-text-wrap  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.produk-text-wrap .rate {
+    display: flex;
+    font-size: 13px;
+    color: rgba(0,0,0,0.6);
+    padding-bottom: 20px;
+}
+.produk-text-wrap .rate img {
+    width: 13px;
+    margin-right: 5px;
+}
+.produk-text-wrap h4 span:first-child {
+    color: #ff008c;
+}
+.produk-text-wrap h4 span:last-child {
+    color: rgba(0,0,0,0.6);
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: normal;
+}
+.produk-text-wrap .qty {
+    position: relative;
+    padding: 30px 0;
+}
+.produk-text-wrap .qty-form {
+    display: flex;
+}
+.produk-text-wrap .qty input, .produk-text-wrap button {
+    border: 1px solid #ccc;
+    outline: none;
+    height: 30px;
+}
+.produk-text-wrap button {
+    width: 30px;
+}
+.produk-text-wrap input {
+   margin: 0 7px;
+   width: 50px;
+}
+.produk-text-wrap .act {
+    padding-top: 20px;
+}
+
+.produk-page .produk-detail {
+    position: relative;
+    padding: 80px 0 40px;
+}
+.produk-detail h2 {
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background-color: #ff0080;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-bottom-right-radius: 50px;
+    color: #fff;
+    width: 260px;
+}
+.produk-page .produk-desc {
+    position: relative;
+    padding: 30px 20px 35px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 14px;
+}
+.produk-page .produk-desc:before {
+    position: absolute;
+    top: -20px;
+    background-color: #fff;
+    font-size: 13px;
+    content: "Deskripsi produk";
+    border: 1px solid #ddd;
+    padding: 7px 12px;
+}
+.produk-page .produk-desc-act {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-bottom: 0;
+    padding: 4px 20px 4px 7px;
+    border-top-right-radius: 50px;
+}
+.produk-desc-act a {
+    font-size: 12px;
+    color: #444;
+}
+.produk-desc-act a:hover {
+    text-decoration: none;
+    color: rgba(0,0,0,0.6);
+}
+.produk-page .produk-ulasan {
+    position: relative;
+    padding: 35px 0 20px;
+    width: 100%;
+}
+.produk-page .produk-ulasan h2 {
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background-color: #ff0080;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-bottom-right-radius: 50px;
+    color: #fff;
+    width: 260px;
+}
+.produk-ulasan-inline {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-ulasan {
+    width: 48%;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+.card-ulasan:nth-child(2n) {
+    margin-left: 3%;
+}
+.card-ulasan-img {
+    position: relative;
+    width: 65px;
+    float: left;
+} 
+.card-ulasan-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.card-ulasan-text {
+    position: relative;
+    width: calc(100% - 65px);
+}
+.card-ulasan-text h5 {
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+.rate-ulasan img {
+    width: 12px;
+}
+.rate-ulasan span {
+    font-size: 11px;
+    color: rgba(0,0,0,0.5);
+}
+.card-ulasan-text p {
+    font-size: 13px;
+    text-align: justify;
+}
+.card-ulasan-text .icon {
+    position: absolute;
+    right: 10px;
+    bottom: 0px; 
+    color: rgba(0,0,0,0.1);
+    font-size: 4rem;
+}
